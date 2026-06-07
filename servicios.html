@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Servicios — Quemado Estudio | Contenido, Branding, Social Media y Web</title>
+<meta name="description" content="Servicios de Quemado Estudio: producción de foto y video, branding e identidad, social media, diseño web, diseño gráfico (brochures, etiquetas) y estrategia de producto. Estrategia primero." />
+<meta name="keywords" content="producción de contenido, branding, social media, diseño web, diseño gráfico, etiquetas de producto, brochure, agencia Perú" />
+<link rel="canonical" href="https://www.quemadoestudio.com/servicios" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Servicios — Quemado Estudio" />
+<meta property="og:description" content="Contenido, branding, social media, web y diseño gráfico. Estrategia primero, ejecución siempre." />
+<meta property="og:url" content="https://www.quemadoestudio.com/servicios" />
+<meta property="og:locale" content="es_PE" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "Servicios Quemado Estudio",
+  "itemListElement": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Producción de Contenido (Foto + Video)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Branding e Identidad"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Social Media"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño y Desarrollo Web"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño Gráfico (Brochures, Etiquetas)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Estrategia de Producto"}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#0a0a0a; --fg:#f4f4f4; --muted:#8a8a8a; --line:#262626;
+  --accent:#2b5cff; --card:#111;
+  --font:'Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);line-height:1.4;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;font-size:13px;letter-spacing:.05em;backdrop-filter:blur(8px);background:rgba(10,10,10,.55);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-bottom:1px solid var(--line)}
+nav .links{display:flex;gap:28px;align-items:center}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;padding:10px 20px;border:1px solid var(--fg);border-radius:40px;font-size:12px;letter-spacing:.08em;transition:.25s;cursor:pointer;background:transparent;color:var(--fg)}
+.btn:hover{background:var(--fg);color:var(--bg)}
+.btn.solid{background:var(--accent);border-color:var(--accent)}
+.btn.solid:hover{background:#1a47e0;border-color:#1a47e0;color:#fff}
+.lang{font-size:12px;color:var(--muted);cursor:pointer}
+.lang span.on{color:var(--fg)}
+
+/* HERO */
+.hero{padding:200px 0 90px}
+.hero .eyebrow{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(48px,11vw,150px);font-weight:800;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+.hero .sub{margin-top:28px;max-width:640px;font-size:18px;color:var(--muted)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* SERVICE BLOCKS */
+.svc-block{display:grid;grid-template-columns:90px 1.1fr 1fr;gap:46px;padding:64px 0;border-top:1px solid var(--line);align-items:start}
+.svc-block .num{font-size:14px;color:var(--accent);padding-top:10px}
+.svc-block h2{font-size:clamp(30px,4vw,52px);font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:-.01em}
+.svc-block .lead{margin-top:18px;color:var(--muted);font-size:17px;max-width:480px}
+.svc-block .price{margin-top:22px;font-size:15px}
+.svc-block .price b{color:var(--accent)}
+.svc-block ul{list-style:none;display:flex;flex-direction:column;gap:14px;padding-top:8px}
+.svc-block li{font-size:16px;padding-left:22px;position:relative;color:var(--fg)}
+.svc-block li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+.svc-block .tag{display:inline-block;margin-top:24px;font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;border:1px solid var(--line);border-radius:30px;padding:7px 16px}
+
+/* PROCESS STRIP */
+.strip{padding:90px 0;text-align:center;border-top:1px solid var(--line)}
+.strip .q{font-size:clamp(28px,5vw,64px);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.strip .q span{color:var(--accent)}
+
+/* FINAL */
+.final{text-align:center;padding:140px 0;border-top:1px solid var(--line)}
+.final h2{font-size:clamp(40px,9vw,120px);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.02em}
+.final p{color:var(--muted);margin:24px auto 38px;max-width:480px;font-size:18px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:50px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
+footer a:hover{color:var(--fg)}
+
+.wa{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:.25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+@media(max-width:860px){
+  .svc-block{grid-template-columns:1fr;gap:18px}
+  nav .links a:not(.btn){display:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo" style="font-weight:800;letter-spacing:.04em">QUEMADO<sup style="font-size:9px">®</sup></a>
+  <div class="links">
+    <a href="index.html#metodo" data-es="Método" data-en="Method">Método</a>
+    <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+    <a href="index.html#trabajo" data-es="Trabajo" data-en="Work">Trabajo</a>
+    <span class="lang" id="lang"><span class="on">ES</span> / <span>EN</span></span>
+    <a class="btn solid" href="index.html#contacto" data-es="Empezar proyecto" data-en="Start a project">Empezar proyecto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="eyebrow reveal" data-es="Servicios · Lo que el usuario necesita" data-en="Services · What the user needs">Servicios · Lo que el usuario necesita</div>
+  <h1 class="reveal" data-es="No posteamos. Ingenieramos." data-en="We don't post. We engineer.">No posteamos.<br>Ingenieramos.</h1>
+  <p class="sub reveal" data-es="Contenido, branding, social, web y diseño gráfico funcionando como un solo sistema. Cada servicio nace de la estrategia — no de la improvisación." data-en="Content, branding, social, web and graphic design working as one system. Every service starts from strategy — never from improvising.">Contenido, branding, social, web y diseño gráfico funcionando como un solo sistema. Cada servicio nace de la estrategia — no de la improvisación.</p>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 01 ]</div>
+    <div>
+      <h2 data-es="Producción de Contenido" data-en="Content Production">Producción de Contenido</h2>
+      <p class="lead" data-es="Fotografía y video pensados para plataformas, campañas y conversión. Cada toma tiene intención: atraer, posicionar o vender. Producción premium alineada a la estrategia." data-en="Photo and video built for platforms, campaigns and conversion. Every shot has intent: attract, position or sell. Premium production aligned to strategy.">Fotografía y video pensados para plataformas, campañas y conversión. Cada toma tiene intención: atraer, posicionar o vender. Producción premium alineada a la estrategia.</p>
+      <div class="price" data-es="Desde <b>$1,200 / mes</b>" data-en="From <b>$1,200 / mo</b>">Desde <b>$1,200 / mes</b></div>
+    </div>
+    <ul>
+      <li data-es="Sesiones de foto de producto y marca" data-en="Product & brand photo sessions">Sesiones de foto de producto y marca</li>
+      <li data-es="Video para Reels, TikTok y campañas" data-en="Video for Reels, TikTok & campaigns">Video para Reels, TikTok y campañas</li>
+      <li data-es="Dirección creativa y guiones base" data-en="Creative direction & base scripts">Dirección creativa y guiones base</li>
+      <li data-es="Edición y post-producción" data-en="Editing & post-production">Edición y post-producción</li>
+    </ul>
+  </div>
+
+  <!-- 02 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 02 ]</div>
+    <div>
+      <h2 data-es="Branding e Identidad" data-en="Brand & Identity">Branding e Identidad</h2>
+      <p class="lead" data-es="Construimos el sistema visual y verbal de tu marca. Una identidad que se ve premium, se sostiene en el tiempo y se reconoce en cada punto de contacto." data-en="We build your brand's visual and verbal system. An identity that looks premium, holds over time and is recognized at every touchpoint.">Construimos el sistema visual y verbal de tu marca. Una identidad que se ve premium, se sostiene en el tiempo y se reconoce en cada punto de contacto.</p>
+      <div class="price" data-es="Proyecto desde <b>$2,500</b>" data-en="Project from <b>$2,500</b>">Proyecto desde <b>$2,500</b></div>
+    </div>
+    <ul>
+      <li data-es="Logo y sistema de identidad" data-en="Logo & identity system">Logo y sistema de identidad</li>
+      <li data-es="Paleta, tipografía y dirección de arte" data-en="Palette, type & art direction">Paleta, tipografía y dirección de arte</li>
+      <li data-es="Tono de voz y mensaje de marca" data-en="Tone of voice & brand message">Tono de voz y mensaje de marca</li>
+      <li data-es="Manual de marca (brand guidelines)" data-en="Brand guidelines manual">Manual de marca (brand guidelines)</li>
+    </ul>
+  </div>
+
+  <!-- 03 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 03 ]</div>
+    <div>
+      <h2 data-es="Social Media" data-en="Social Media">Social Media</h2>
+      <p class="lead" data-es="Gestión completa de tus redes: estrategia, calendario, contenido y comunidad. Presencia consistente que convierte seguidores en clientes — no solo likes." data-en="Full social management: strategy, calendar, content and community. Consistent presence that turns followers into customers — not just likes.">Gestión completa de tus redes: estrategia, calendario, contenido y comunidad. Presencia consistente que convierte seguidores en clientes — no solo likes.</p>
+      <div class="price" data-es="Desde <b>$900 / mes</b>" data-en="From <b>$900 / mo</b>">Desde <b>$900 / mes</b></div>
+    </div>
+    <ul>
+      <li data-es="Estrategia y pilares de contenido" data-en="Strategy & content pillars">Estrategia y pilares de contenido</li>
+      <li data-es="Calendario y publicación con ritmo" data-en="Calendar & rhythmic posting">Calendario y publicación con ritmo</li>
+      <li data-es="Diseño de piezas y copies" data-en="Post design & copywriting">Diseño de piezas y copies</li>
+      <li data-es="Gestión de comunidad y reportes" data-en="Community management & reports">Gestión de comunidad y reportes</li>
+    </ul>
+  </div>
+
+  <!-- 04 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 04 ]</div>
+    <div>
+      <h2 data-es="Diseño y Desarrollo Web" data-en="Web Design & Dev">Diseño y Desarrollo Web</h2>
+      <p class="lead" data-es="Sitios rápidos, optimizados para Google y pensados para convertir. Tu web deja de ser invisible y empieza a generar leads reales." data-en="Fast, Google-optimized sites built to convert. Your website stops being invisible and starts generating real leads.">Sitios rápidos, optimizados para Google y pensados para convertir. Tu web deja de ser invisible y empieza a generar leads reales.</p>
+      <div class="price" data-es="Proyecto desde <b>$1,800</b>" data-en="Project from <b>$1,800</b>">Proyecto desde <b>$1,800</b></div>
+    </div>
+    <ul>
+      <li data-es="Landing pages y sitios corporativos" data-en="Landing pages & corporate sites">Landing pages y sitios corporativos</li>
+      <li data-es="SEO técnico y optimización de carga" data-en="Technical SEO & load optimization">SEO técnico y optimización de carga</li>
+      <li data-es="Diseño responsive (móvil primero)" data-en="Responsive design (mobile-first)">Diseño responsive (móvil primero)</li>
+      <li data-es="Integración de analítica y conversión" data-en="Analytics & conversion setup">Integración de analítica y conversión</li>
+    </ul>
+  </div>
+
+  <!-- 05 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 05 ]</div>
+    <div>
+      <h2 data-es="Diseño Gráfico" data-en="Graphic Design">Diseño Gráfico</h2>
+      <p class="lead" data-es="Material físico y digital con el mismo estándar premium de tu marca. Desde la etiqueta de tu producto hasta el brochure de ventas." data-en="Physical and digital material with the same premium standard as your brand. From your product label to your sales brochure.">Material físico y digital con el mismo estándar premium de tu marca. Desde la etiqueta de tu producto hasta el brochure de ventas.</p>
+      <div class="price" data-es="Por pieza o paquete · <b>Cotiza</b>" data-en="Per piece or package · <b>Get a quote</b>">Por pieza o paquete · <b>Cotiza</b></div>
+    </div>
+    <ul>
+      <li data-es="Brochures y catálogos" data-en="Brochures & catalogs">Brochures y catálogos</li>
+      <li data-es="Etiquetas y packaging de producto" data-en="Product labels & packaging">Etiquetas y packaging de producto</li>
+      <li data-es="Flyers, banners y material de campaña" data-en="Flyers, banners & campaign material">Flyers, banners y material de campaña</li>
+      <li data-es="Presentaciones y propuestas de venta" data-en="Decks & sales proposals">Presentaciones y propuestas de venta</li>
+    </ul>
+  </div>
+
+  <!-- 06 -->
+  <div class="svc-block reveal">
+    <div class="num">[ 06 ]</div>
+    <div>
+      <h2 data-es="Estrategia de Producto" data-en="Product Strategy">Estrategia de Producto</h2>
+      <p class="lead" data-es="Antes de producir nada, definimos qué vendes, a quién y por qué te eligen. La base que hace que todo lo demás funcione." data-en="Before producing anything, we define what you sell, to whom and why they choose you. The base that makes everything else work.">Antes de producir nada, definimos qué vendes, a quién y por qué te eligen. La base que hace que todo lo demás funcione.</p>
+      <div class="price" data-es="Incluida en cada engagement" data-en="Included in every engagement">Incluida en cada engagement</div>
+    </div>
+    <ul>
+      <li data-es="Posicionamiento y mensaje" data-en="Positioning & messaging">Posicionamiento y mensaje</li>
+      <li data-es="Definición de público ideal (ICP)" data-en="Ideal audience (ICP) definition">Definición de público ideal (ICP)</li>
+      <li data-es="Roadmap de contenido por canal" data-en="Content roadmap by channel">Roadmap de contenido por canal</li>
+      <li data-es="Estructura de campañas y embudo" data-en="Campaign & funnel structure">Estructura de campañas y embudo</li>
+    </ul>
+  </div>
+
+</main>
+
+<!-- PROCESS STRIP -->
+<section class="strip wrap">
+  <div class="q reveal" data-es="Estrategia primero. <span>Ejecución siempre.</span>" data-en="Strategy first. <span>Execution always.</span>">Estrategia primero. <span>Ejecución siempre.</span></div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final wrap">
+  <h2 class="reveal" data-es="¿Empezamos?" data-en="Shall we start?">¿Empezamos?</h2>
+  <p class="reveal" data-es="Agenda una llamada de 15 minutos. Te decimos qué servicio mueve la aguja primero — sin compromiso." data-en="Book a 15-min call. We'll tell you which service moves the needle first — no commitment.">Agenda una llamada de 15 minutos. Te decimos qué servicio mueve la aguja primero — sin compromiso.</p>
+  <div class="cta-row reveal">
+    <a class="btn solid" href="https://wa.me/51999999999" target="_blank" rel="noopener" data-es="Agendar llamada" data-en="Book a call">Agendar llamada</a>
+    <a class="btn" href="mailto:quemadoestudio@gmail.com" data-es="Escribir un email" data-en="Send an email">Escribir un email</a>
+  </div>
+</section>
+
+<footer>
+  <div>© 2024–2026 Quemado Estudio — <span data-es="Agencia de Marketing Digital · Perú & EE.UU." data-en="Digital Marketing Agency · Peru & U.S.">Agencia de Marketing Digital · Perú &amp; EE.UU.</span></div>
+  <div style="display:flex;gap:24px">
+    <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:quemadoestudio@gmail.com">Email</a>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/51999999999" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.115zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+let lang='es';
+const langBtn=document.getElementById('lang');
+langBtn.addEventListener('click',()=>{
+  lang=lang==='es'?'en':'es';
+  document.documentElement.lang=lang;
+  langBtn.children[0].classList.toggle('on',lang==='es');
+  langBtn.children[1].classList.toggle('on',lang==='en');
+  document.querySelectorAll('[data-es]').forEach(el=>{el.innerHTML=el.getAttribute('data-'+lang)});
+});
+</script>
+</body>
+</html>
