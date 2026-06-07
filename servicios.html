@@ -55,7 +55,10 @@ nav a:hover{color:var(--accent)}
 .lang span.on{color:var(--fg)}
 
 /* HERO */
-.hero{padding:200px 0 90px}
+.hero{padding:200px 0 90px;position:relative}
+.orb{position:absolute;top:140px;right:5%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3a3a,#0c0c0c 70%);box-shadow:inset -18px -18px 50px #000,0 0 70px rgba(0,0,0,.6);animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(8deg)}}
+@media(max-width:860px){.orb{display:none}}
 .hero .eyebrow{font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
 .hero h1{font-size:clamp(48px,11vw,150px);font-weight:800;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
 .hero .sub{margin-top:28px;max-width:640px;font-size:18px;color:var(--muted)}
@@ -114,6 +117,7 @@ footer a:hover{color:var(--fg)}
 
 <!-- HERO -->
 <header class="hero wrap">
+  <div class="orb"></div>
   <div class="eyebrow reveal" data-es="Servicios · Lo que el usuario necesita" data-en="Services · What the user needs">Servicios · Lo que el usuario necesita</div>
   <h1 class="reveal" data-es="No posteamos. Ingenieramos." data-en="We don't post. We engineer.">No posteamos.<br>Ingenieramos.</h1>
   <p class="sub reveal" data-es="Contenido, branding, social, web y diseño gráfico funcionando como un solo sistema. Cada servicio nace de la estrategia — no de la improvisación." data-en="Content, branding, social, web and graphic design working as one system. Every service starts from strategy — never from improvising.">Contenido, branding, social, web y diseño gráfico funcionando como un solo sistema. Cada servicio nace de la estrategia — no de la improvisación.</p>
