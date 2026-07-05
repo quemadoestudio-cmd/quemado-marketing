@@ -1,296 +1,231 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ===== SEO: corrige el problema #2 de la auditoría ===== -->
-<title>Quemado Estudio — Agencia de Marketing Digital y Producción de Contenido | Perú & US</title>
-<meta name="description" content="Agencia creativa liderada por estrategia. Producción de foto y video, branding, social media y web que convierten marcas en presencia real. Operamos entre Perú y EE.UU." />
-<meta name="keywords" content="agencia de marketing digital, producción de contenido, branding Perú, social media, agencia creativa, estrategia de contenido" />
+<!-- SEO -->
+<title>Quemado Estudio — Strategy-Led Creative Agency | LATAM & US</title>
+<meta name="description" content="Creative systems for brands ready to move. Content production, brand & identity, and web design. Strategy first. Execution always. From Lima to the U.S." />
+<meta name="keywords" content="creative agency, digital marketing, content production, branding, web design, agencia creativa, Lima, Peru, US" />
 <link rel="canonical" href="https://www.quemadoestudio.com/" />
 <meta name="robots" content="index, follow" />
-
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Quemado Estudio — Agencia de Marketing Digital" />
-<meta property="og:description" content="Estrategia primero. Ejecución siempre. Convertimos marcas en presencia real entre LATAM y US." />
+<meta property="og:title" content="Quemado Estudio — Strategy-Led Creative Agency" />
+<meta property="og:description" content="Strategy first. Execution always. Creative systems for brands ready to move." />
 <meta property="og:url" content="https://www.quemadoestudio.com/" />
-<meta property="og:locale" content="es_PE" />
-
-<!-- Datos estructurados para Google -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Quemado Estudio",
-  "description": "Agencia creativa liderada por estrategia. Producción de contenido, branding, social media y web.",
-  "url": "https://www.quemadoestudio.com",
-  "areaServed": ["PE", "US"],
-  "serviceType": ["Marketing Digital", "Producción de Contenido", "Branding", "Social Media", "Diseño Web"],
-  "foundingDate": "2024"
-}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Quemado Estudio","description":"Strategy-led creative agency. Content, branding and web.","url":"https://www.quemadoestudio.com","areaServed":["PE","US"],"foundingDate":"2024"}
 </script>
 
 <style>
 :root{
-  --bg:#0a0a0a; --fg:#f4f4f4; --muted:#8a8a8a; --line:#262626;
-  --accent:#2b5cff; --card:#111;
-  --font:'Helvetica Neue',Arial,sans-serif;
+  --black:#0b0a09; --cream:#f0ede6; --ink:#141210;
+  --orange:#e8501e; --muted:#9a948c; --line:#2a2724; --linelt:#d8d3c8;
+  --sans:'Helvetica Neue',Arial,sans-serif; --serif:Georgia,'Times New Roman',serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);color:var(--fg);font-family:var(--font);
-  line-height:1.4;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
+body{background:var(--black);color:var(--cream);font-family:var(--sans);line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+img{max-width:100%;display:block}
 
 /* ===== NAV ===== */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:20px 32px;font-size:13px;letter-spacing:.05em;
-  backdrop-filter:blur(8px);background:rgba(10,10,10,.55);
-  border-bottom:1px solid transparent;transition:border-color .3s;
-}
-nav.scrolled{border-bottom:1px solid var(--line)}
-nav .links{display:flex;gap:28px;align-items:center}
-nav a:hover{color:var(--accent)}
-.btn{
-  display:inline-block;padding:10px 20px;border:1px solid var(--fg);
-  border-radius:40px;font-size:12px;letter-spacing:.08em;
-  transition:.25s;cursor:pointer;background:transparent;color:var(--fg);
-}
-.btn:hover{background:var(--fg);color:var(--bg)}
-.btn.solid{background:var(--accent);border-color:var(--accent)}
-.btn.solid:hover{background:#1a47e0;border-color:#1a47e0;color:#fff}
-.lang{font-size:12px;color:var(--muted);cursor:pointer}
-.lang span.on{color:var(--fg)}
+nav{position:absolute;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:28px 40px;font-size:13px;letter-spacing:.06em}
+nav .logo{font-weight:700;letter-spacing:.02em}
+nav .links{display:flex;gap:34px}
+nav .links a{transition:color .2s}
+nav .links a:hover{color:var(--orange)}
 
 /* ===== HERO ===== */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative}
-.hero .eyebrow{font-size:14px;letter-spacing:.08em;color:var(--fg);margin-bottom:24px;text-transform:uppercase}
-.hero h1{
-  font-size:clamp(48px,11vw,170px);font-weight:800;line-height:.92;
-  letter-spacing:-.02em;text-transform:uppercase;
-}
-.hero .sub{margin-top:32px;max-width:620px;font-size:18px;color:var(--muted)}
-.hero .cta-row{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
-.rock{
-  position:absolute;top:18%;right:6%;width:240px;height:240px;
-  border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a3a3a,#0c0c0c 70%);
-  box-shadow:inset -20px -20px 60px #000,0 0 80px rgba(0,0,0,.6);
-  animation:float 7s ease-in-out infinite;
-}
-@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-24px) rotate(8deg)}}
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;
+  background:linear-gradient(180deg,rgba(11,10,9,.35) 0%,rgba(11,10,9,.15) 45%,rgba(11,10,9,.92) 100%),
+  radial-gradient(120% 90% at 60% 30%,#3a352f 0%,#1a1714 55%,#0b0a09 100%);
+  background-size:cover;background-position:center;overflow:hidden}
+/* Reemplaza el gradiente por tu foto: background-image:url('images/hero.jpg') */
+.hero-inner{padding:0 0 70px;max-width:760px}
+.hero h1{font-size:clamp(42px,7vw,92px);font-weight:800;line-height:.96;letter-spacing:-.02em;text-transform:uppercase}
+.hero p{margin-top:22px;font-size:19px;color:#e7e2d8;max-width:440px}
+.hero .cta{display:inline-block;margin-top:34px;background:var(--orange);color:#fff;padding:15px 30px;font-size:13px;letter-spacing:.08em;font-weight:600;transition:.2s}
+.hero .cta:hover{background:#c93f11}
+.hero-tag{position:absolute;top:34%;right:8%;font-size:12px;letter-spacing:.15em;line-height:2.1;color:#c9c3b8;text-align:right;opacity:.85}
 
-/* ===== REVEAL ON SCROLL ===== */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
-.reveal.in{opacity:1;transform:none}
+/* ===== SERVICES ===== */
+.services{padding:110px 0 120px}
+.eyebrow{color:var(--orange);font-size:13px;letter-spacing:.14em;margin-bottom:22px}
+.sec-h{font-size:clamp(34px,5.5vw,64px);font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:-.02em;margin-bottom:56px}
+.svc-row{border:1px solid var(--line);border-radius:6px;padding:38px 40px;margin-bottom:20px;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;transition:border-color .25s}
+.svc-row:hover{border-color:#4a4640}
+.svc-row .title{font-size:clamp(26px,3.4vw,40px);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.svc-row .desc{margin-top:20px;color:var(--muted);font-size:15px;max-width:300px}
+.svc-specs{font-size:14px}
+.svc-specs .spec{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+.svc-specs .spec b{color:var(--cream);font-weight:600}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
+.svc-foot .scope{font-size:12px;letter-spacing:.1em;font-weight:600}
+.book{border:1px solid var(--cream);border-radius:40px;padding:11px 22px;font-size:12px;letter-spacing:.08em;transition:.2s;white-space:nowrap}
+.book:hover{background:var(--cream);color:var(--black)}
 
-/* ===== SECTION HEADERS ===== */
-section{padding:120px 0;border-top:1px solid var(--line)}
-.sec-tag{font-size:13px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:18px}
-.sec-title{font-size:clamp(36px,6vw,88px);font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:-.02em}
-.sec-lead{margin-top:20px;max-width:640px;color:var(--muted);font-size:17px}
-
-/* ===== METHOD ===== */
-.method-grid{margin-top:70px;display:grid;gap:0}
-.method-item{
-  display:grid;grid-template-columns:80px 1fr 1fr;gap:40px;
-  padding:46px 0;border-top:1px solid var(--line);align-items:start;
-}
-.method-item .num{font-size:14px;color:var(--accent)}
-.method-item h3{font-size:28px;font-weight:700;text-transform:uppercase}
-.method-item p{color:var(--muted);font-size:16px;margin-top:8px}
-
-/* ===== SERVICES (accordion) ===== */
-.svc{border-top:1px solid var(--line)}
-.svc:last-child{border-bottom:1px solid var(--line)}
-.svc-head{display:flex;justify-content:space-between;align-items:center;padding:34px 0;cursor:pointer}
-.svc-head h3{font-size:clamp(28px,4vw,46px);font-weight:800;text-transform:uppercase;transition:color .25s}
-.svc-head:hover h3{color:var(--accent)}
-.svc-plus{font-size:32px;color:var(--muted);transition:transform .3s}
-.svc.open .svc-plus{transform:rotate(45deg);color:var(--accent)}
-.svc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
-.svc.open .svc-body{max-height:320px}
-.svc-inner{padding:0 0 38px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.svc-inner p{color:var(--muted);font-size:16px}
-.svc-price{font-size:14px;color:var(--fg);margin-top:18px}
-.svc-price b{color:var(--accent)}
-
-/* ===== WORK / PROOF (corrige problema #4) ===== */
-.work-grid{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.work-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px;transition:.3s}
-.work-card:hover{transform:translateY(-6px);border-color:#3a3a3a}
-.work-card .client{font-size:13px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.work-card .metric{font-size:52px;font-weight:800;margin:14px 0 6px;letter-spacing:-.02em}
-.work-card .metric span{color:var(--accent)}
-.work-card .desc{color:var(--muted);font-size:15px}
-
-/* ===== STATS BAR ===== */
-.stats{display:flex;gap:60px;flex-wrap:wrap;margin-top:50px}
-.stat .n{font-size:clamp(40px,6vw,72px);font-weight:800;letter-spacing:-.02em}
-.stat .l{color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.06em}
-
-/* ===== CTA FINAL ===== */
-.final{text-align:center;padding:160px 0}
-.final h2{font-size:clamp(40px,9vw,130px);font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.02em}
-.final p{color:var(--muted);margin:24px auto 40px;max-width:480px;font-size:18px}
+/* ===== CREAM BLOCK ===== */
+.cream{background:var(--cream);color:var(--ink)}
+.cream-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--linelt)}
+.cream-top>div{padding:70px 40px}
+.cream-top>div:first-child{border-right:1px solid var(--linelt)}
+.cream .label{color:var(--orange);font-size:12px;letter-spacing:.14em;margin-bottom:26px}
+.build{font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.01em}
+.build i{font-family:var(--serif);font-style:italic;font-weight:400}
+.build b{font-weight:800;text-transform:uppercase}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.6vw,40px);line-height:1.25;display:flex;align-items:center;height:100%}
+.cream-bot{display:grid;grid-template-columns:1fr 1fr}
+.cream-bot>div{padding:56px 40px}
+.cream-bot>div:first-child{border-right:1px solid var(--linelt)}
+.about-txt{font-size:20px;line-height:1.4;max-width:340px}
+.book-card{display:flex;gap:22px;align-items:center}
+.avatar{width:88px;height:88px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 40% 35%,#6a655c,#26231f);box-shadow:inset -6px -6px 18px rgba(0,0,0,.4)}
+.book-card h3{font-size:20px;font-weight:800;text-transform:uppercase;line-height:1.05}
+.book-card p{font-size:14px;color:#6b655c;margin:8px 0 16px}
+.talk{display:inline-block;background:var(--ink);color:var(--cream);padding:12px 26px;font-size:12px;letter-spacing:.08em;transition:.2s}
+.talk:hover{background:var(--orange)}
 
 /* ===== FOOTER ===== */
-footer{border-top:1px solid var(--line);padding:50px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:var(--muted)}
-footer a:hover{color:var(--fg)}
+footer{background:var(--cream);color:var(--ink);border-top:1px solid var(--linelt);padding:28px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;letter-spacing:.06em}
+footer .fl{display:flex;gap:30px}
+footer a:hover{color:var(--orange)}
 
-/* WhatsApp float */
-.wa{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:.25s}
-.wa:hover{transform:scale(1.08)}
-.wa svg{width:30px;height:30px;fill:#fff}
+/* WhatsApp */
+.wa{position:fixed;bottom:22px;right:22px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:.2s}
+.wa:hover{transform:scale(1.08)}.wa svg{width:29px;height:29px;fill:#fff}
 
-@media(max-width:860px){
-  .method-item{grid-template-columns:1fr;gap:10px}
-  .svc-inner,.work-grid{grid-template-columns:1fr}
-  .rock{display:none}
-  nav .links a:not(.btn){display:none}
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+  .wrap,nav,.cream-top>div,.cream-bot>div,footer{padding-left:22px;padding-right:22px}
+  nav .links{gap:16px;font-size:11px}
+  .hero-tag{display:none}
+  .svc-row,.cream-top,.cream-bot{grid-template-columns:1fr;gap:26px}
+  .cream-top>div:first-child,.cream-bot>div:first-child{border-right:none;border-bottom:1px solid var(--linelt)}
+  .svc-foot{flex-direction:column;gap:16px;align-items:flex-start}
 }
-[hidden-lang]{display:none}
 </style>
 </head>
 <body>
 
 <!-- ===== NAV ===== -->
-<nav id="nav">
-  <div class="logo" style="font-weight:800;letter-spacing:.04em">QUEMADO<sup style="font-size:9px">®</sup></div>
+<nav>
+  <div class="logo">QUEMADO<sup style="font-size:8px">®</sup> ESTUDIO</div>
   <div class="links">
-    <a href="#metodo" data-es="Método" data-en="Method">Método</a>
-    <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
-    <a href="#trabajo" data-es="Trabajo" data-en="Work">Trabajo</a>
-    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-    <span class="lang" id="lang"><span class="on">ES</span> / <span>EN</span></span>
-    <a class="btn solid" href="#contacto" data-es="Empezar proyecto" data-en="Start a project">Empezar proyecto</a>
+    <a href="#work">WORK</a>
+    <a href="servicios.html">SERVICES</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
-<header class="hero wrap">
-  <div class="rock"></div>
-  <div class="eyebrow reveal" data-es="Agencia creativa liderada por estrategia · Perú & EE.UU." data-en="Strategy-led creative agency · Peru & U.S.">Agencia creativa liderada por estrategia · Perú &amp; EE.UU.</div>
-  <h1 class="reveal" data-es="Agencia de marketing digital" data-en="Digital marketing agency">Agencia de<br>marketing<br>digital</h1>
-  <p class="sub reveal" data-es="No publicamos. Diseñamos sistemas. Estrategia, contenido y performance conectados en un solo flujo — para marcas que quieren dejar de ser invisibles." data-en="We don't post. We engineer systems. Strategy, content and performance in one flow — for brands done being invisible.">No publicamos. Diseñamos sistemas. Estrategia, contenido y performance conectados en un solo flujo — para marcas que quieren dejar de ser invisibles.</p>
-  <div class="cta-row reveal">
-    <a class="btn solid" href="#contacto" data-es="Empezar proyecto" data-en="Start a project">Empezar proyecto</a>
-    <a class="btn" href="#trabajo" data-es="Ver trabajo" data-en="See work">Ver trabajo</a>
-  </div>
+<header class="hero">
+  <div class="hero-tag">IDEAS<br>SYSTEMS<br>IMPACT</div>
+  <div class="wrap"><div class="hero-inner">
+    <h1>Strategy first.<br>Execution always.</h1>
+    <p>Creative systems for brands ready to move.</p>
+    <a class="cta" href="#contact">START A PROJECT</a>
+  </div></div>
 </header>
 
-<!-- ===== MÉTODO ===== -->
-<section id="metodo" class="wrap">
-  <div class="sec-tag reveal" data-es="Nuestro método · Resultado real" data-en="Our method · Real output">Nuestro método · Resultado real</div>
-  <h2 class="sec-title reveal" data-es="Un sistema claro. Sin improvisación." data-en="A clear system. No improvising.">Un sistema claro.<br>Sin improvisación.</h2>
-  <div class="method-grid">
-    <div class="method-item reveal">
-      <div class="num">[ 01 ]</div>
-      <h3 data-es="Concepto & Estrategia" data-en="Concept & Strategy">Concepto &amp; Estrategia</h3>
-      <p data-es="Definimos mensaje, tono y dirección creativa. La idea madre que sostiene todo el mes: narrativa, pilares de contenido, estructura de campañas y roadmap por canal." data-en="We define message, tone and creative direction. The core idea behind the month: narrative, content pillars, campaign structure and channel roadmap.">Definimos mensaje, tono y dirección creativa. La idea madre que sostiene todo el mes: narrativa, pilares de contenido, estructura de campañas y roadmap por canal.</p>
+<!-- ===== SERVICES ===== -->
+<section class="services" id="work">
+  <div class="wrap">
+    <div class="eyebrow reveal">[ SERVICES ]</div>
+    <h2 class="sec-h reveal">We don't post.<br>We engineer.</h2>
+
+    <!-- 1 -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Content<br>Production</div>
+        <p class="desc">Premium production built for platforms, campaigns and conversion.</p>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Scope</span><b>Photo + Video</b></div>
+          <div class="spec"><span>Output</span><b>Campaign + Social</b></div>
+          <div class="spec"><span>Delivery</span><b>Ready to Publish</b></div>
+        </div>
+        <div class="svc-foot"><span class="scope">CUSTOM SCOPE</span><a class="book" href="#contact">BOOK A CALL</a></div>
+      </div>
     </div>
-    <div class="method-item reveal">
-      <div class="num">[ 02 ]</div>
-      <h3 data-es="Producción (Foto + Video)" data-en="Production (Photo + Video)">Producción (Foto + Video)</h3>
-      <p data-es="Ejecutamos con dirección. Cada toma tiene intención: atraer, posicionar o convertir. Sesiones de grabación y foto alineadas a la estrategia." data-en="We execute with direction. Every shot has intent: attract, position or convert. Photo and video sessions aligned to strategy.">Ejecutamos con dirección. Cada toma tiene intención: atraer, posicionar o convertir. Sesiones de grabación y foto alineadas a la estrategia.</p>
+
+    <!-- 2 -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Brand &amp;<br>Identity</div>
+        <p class="desc">Clear positioning and visual systems designed to stay consistent.</p>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Focus</span><b>Positioning</b></div>
+          <div class="spec"><span>System</span><b>Visual + Verbal</b></div>
+          <div class="spec"><span>Delivery</span><b>Brand Toolkit</b></div>
+        </div>
+        <div class="svc-foot"><span class="scope">CUSTOM SCOPE</span><a class="book" href="#contact">BOOK A CALL</a></div>
+      </div>
     </div>
-    <div class="method-item reveal">
-      <div class="num">[ 03 ]</div>
-      <h3 data-es="Distribución & Performance" data-en="Distribution & Performance">Distribución &amp; Performance</h3>
-      <p data-es="Publicamos con ritmo y medimos todo. La producción se verifica contra datos — no contra corazonadas. Si no se puede medir, no escala." data-en="We publish with rhythm and measure everything. Production is verified against data — not gut feeling. If it can't be measured, it doesn't scale.">Publicamos con ritmo y medimos todo. La producción se verifica contra datos — no contra corazonadas. Si no se puede medir, no escala.</p>
+
+    <!-- 3 -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Web Design &amp;<br>Experience</div>
+        <p class="desc">Digital experiences that communicate clearly and convert.</p>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Focus</span><b>UX / UI</b></div>
+          <div class="spec"><span>Build</span><b>Responsive</b></div>
+          <div class="spec"><span>Goal</span><b>Performance</b></div>
+        </div>
+        <div class="svc-foot"><span class="scope">CUSTOM SCOPE</span><a class="book" href="#contact">BOOK A CALL</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICIOS ===== -->
-<section id="servicios" class="wrap">
-  <div class="sec-tag reveal" data-es="Servicios · Lo que el usuario necesita" data-en="Services · What the user needs">Servicios · Lo que el usuario necesita</div>
-  <h2 class="sec-title reveal" style="margin-bottom:60px" data-es="No posteamos. Ingenieramos." data-en="We don't post. We engineer.">No posteamos.<br>Ingenieramos.</h2>
-
-  <div class="svc reveal">
-    <div class="svc-head"><h3 data-es="Producción de contenido" data-en="Content production">Producción de contenido</h3><div class="svc-plus">+</div></div>
-    <div class="svc-body"><div class="svc-inner">
-      <p data-es="Creamos fotografía y video pensados para plataformas digitales, campañas y conversión. Producción premium alineada a la estrategia." data-en="Photo and video built for digital platforms, campaigns and conversion. Premium production aligned to strategy.">Creamos fotografía y video pensados para plataformas digitales, campañas y conversión. Producción premium alineada a la estrategia.</p>
-      <div><div class="svc-price" data-es="Desde <b>$1,200 / mes</b>" data-en="From <b>$1,200 / mo</b>">Desde <b>$1,200 / mes</b></div></div>
-    </div></div>
-  </div>
-
-  <div class="svc reveal">
-    <div class="svc-head"><h3 data-es="Branding & Identidad" data-en="Brand & Identity">Branding &amp; Identidad</h3><div class="svc-plus">+</div></div>
-    <div class="svc-body"><div class="svc-inner">
-      <p data-es="Construimos el sistema visual y verbal de tu marca: logo, paleta, tono y guía de uso. Una identidad que se ve premium y se sostiene en el tiempo." data-en="We build your brand's visual and verbal system: logo, palette, tone and usage guide. An identity that looks premium and holds up over time.">Construimos el sistema visual y verbal de tu marca: logo, paleta, tono y guía de uso. Una identidad que se ve premium y se sostiene en el tiempo.</p>
-      <div><div class="svc-price" data-es="Proyecto desde <b>$2,500</b>" data-en="Project from <b>$2,500</b>">Proyecto desde <b>$2,500</b></div></div>
-    </div></div>
-  </div>
-
-  <div class="svc reveal">
-    <div class="svc-head"><h3 data-es="Social Media" data-en="Social Media">Social Media</h3><div class="svc-plus">+</div></div>
-    <div class="svc-body"><div class="svc-inner">
-      <p data-es="Gestión completa de tus redes: estrategia, calendario, contenido y comunidad. Presencia consistente que convierte seguidores en clientes." data-en="Full social management: strategy, calendar, content and community. Consistent presence that turns followers into customers.">Gestión completa de tus redes: estrategia, calendario, contenido y comunidad. Presencia consistente que convierte seguidores en clientes.</p>
-      <div><div class="svc-price" data-es="Desde <b>$900 / mes</b>" data-en="From <b>$900 / mo</b>">Desde <b>$900 / mes</b></div></div>
-    </div></div>
-  </div>
-
-  <div class="svc reveal">
-    <div class="svc-head"><h3 data-es="Diseño & Desarrollo Web" data-en="Web Design & Dev">Diseño &amp; Desarrollo Web</h3><div class="svc-plus">+</div></div>
-    <div class="svc-body"><div class="svc-inner">
-      <p data-es="Sitios rápidos, optimizados para Google y pensados para convertir. Tu web deja de ser invisible y empieza a generar leads." data-en="Fast, Google-optimized sites built to convert. Your website stops being invisible and starts generating leads.">Sitios rápidos, optimizados para Google y pensados para convertir. Tu web deja de ser invisible y empieza a generar leads.</p>
-      <div><div class="svc-price" data-es="Proyecto desde <b>$1,800</b>" data-en="Project from <b>$1,800</b>">Proyecto desde <b>$1,800</b></div></div>
-    </div></div>
-  </div>
-</section>
-
-<!-- ===== TRABAJO / PRUEBA ===== -->
-<section id="trabajo" class="wrap">
-  <div class="sec-tag reveal" data-es="Trabajo · Resultados medibles" data-en="Work · Measurable results">Trabajo · Resultados medibles</div>
-  <h2 class="sec-title reveal" data-es="Lo que entregamos" data-en="What we deliver">Lo que entregamos</h2>
-  <div class="work-grid">
-    <div class="work-card reveal">
-      <div class="client">Brand Kit</div>
-      <div class="metric"><span>+240%</span></div>
-      <div class="desc" data-es="Crecimiento de alcance en 3 meses con producción de contenido propio." data-en="Reach growth in 3 months with original content production.">Crecimiento de alcance en 3 meses con producción de contenido propio.</div>
+<!-- ===== CREAM BLOCK ===== -->
+<section class="cream" id="about">
+  <div class="cream-top">
+    <div class="reveal">
+      <div class="label">FROM LIMA TO THE U.S.</div>
+      <div class="build"><i>Let's build</i><br><b>Something</b><br><b>That works.</b></div>
     </div>
-    <div class="work-card reveal">
-      <div class="client">Obsidiane</div>
-      <div class="metric"><span>x4</span></div>
-      <div class="desc" data-es="Volumen de leads tras rediseño de marca y sistema de campañas." data-en="Lead volume after brand redesign and campaign system.">Volumen de leads tras rediseño de marca y sistema de campañas.</div>
-    </div>
-    <div class="work-card reveal">
-      <div class="client">LATAM Retail</div>
-      <div class="metric"><span>30+</span></div>
-      <div class="desc" data-es="Piezas de foto y video producidas al mes, listas para campaña." data-en="Photo and video pieces produced monthly, campaign-ready.">Piezas de foto y video producidas al mes, listas para campaña.</div>
+    <div class="reveal">
+      <div class="quote">"Strategy gives direction. Execution builds presence."</div>
     </div>
   </div>
-
-  <div class="stats">
-    <div class="stat reveal"><div class="n">2024</div><div class="l" data-es="Fundados" data-en="Founded">Fundados</div></div>
-    <div class="stat reveal"><div class="n">2</div><div class="l" data-es="Países · Perú & US" data-en="Countries · Peru & US">Países · Perú &amp; US</div></div>
-    <div class="stat reveal"><div class="n">100%</div><div class="l" data-es="Estrategia primero" data-en="Strategy first">Estrategia primero</div></div>
-  </div>
-</section>
-
-<!-- ===== CTA FINAL ===== -->
-<section id="contacto" class="final wrap">
-  <h2 class="reveal" data-es="Trabajemos juntos" data-en="Let's work together">Trabajemos<br>juntos</h2>
-  <p class="reveal" data-es="Estrategia primero. Ejecución siempre. Agenda una llamada de 15 minutos y te decimos qué arreglar primero." data-en="Strategy first. Execution always. Book a 15-min call and we'll tell you what to fix first.">Estrategia primero. Ejecución siempre. Agenda una llamada de 15 minutos y te decimos qué arreglar primero.</p>
-  <div class="cta-row reveal" style="justify-content:center">
-    <a class="btn solid" href="https://wa.me/51999999999" target="_blank" rel="noopener" data-es="Agendar llamada" data-en="Book a call">Agendar llamada</a>
-    <a class="btn" href="mailto:quemadoestudio@gmail.com" data-es="Escribir un email" data-en="Send an email">Escribir un email</a>
+  <div class="cream-bot" id="contact">
+    <div class="reveal">
+      <div class="label">[ ABOUT QUEMADO ]</div>
+      <p class="about-txt">We design digital systems where strategy, content and performance move as one.</p>
+    </div>
+    <div class="reveal">
+      <div class="book-card">
+        <div class="avatar"></div>
+        <div>
+          <h3>Book a call<br>with Quemado</h3>
+          <p>Tell us where your brand is going. We'll map the clearest way forward.</p>
+          <a class="talk" href="https://wa.me/51999999999" target="_blank" rel="noopener">LET'S TALK</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div>© 2024–2026 Quemado Estudio — <span data-es="Agencia de Marketing Digital · Perú & EE.UU." data-en="Digital Marketing Agency · Peru & U.S.">Agencia de Marketing Digital · Perú &amp; EE.UU.</span></div>
-  <div style="display:flex;gap:24px">
-    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-    <a href="mailto:quemadoestudio@gmail.com">Email</a>
-    <a href="https://wa.me/51999999999" target="_blank" rel="noopener">WhatsApp</a>
+  <div>QUEMADO® ESTUDIO — LATAM &amp; US</div>
+  <div class="fl">
+    <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener">TIKTOK</a>
+    <a href="https://threads.net" target="_blank" rel="noopener">THREADS</a>
   </div>
 </footer>
 
@@ -299,39 +234,8 @@ footer a:hover{color:var(--fg)}
 </a>
 
 <script>
-// Nav background al hacer scroll
-const nav=document.getElementById('nav');
-addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
-
-// Reveal on scroll
-const io=new IntersectionObserver((es)=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Acordeón de servicios
-document.querySelectorAll('.svc-head').forEach(h=>{
-  h.addEventListener('click',()=>{
-    const svc=h.parentElement;
-    document.querySelectorAll('.svc').forEach(s=>{if(s!==svc)s.classList.remove('open')});
-    svc.classList.toggle('open');
-  });
-});
-// Abrir el primero por defecto
-document.querySelector('.svc').classList.add('open');
-
-// Toggle de idioma ES/EN (corrige problema #1: idioma consistente)
-let lang='es';
-const langBtn=document.getElementById('lang');
-langBtn.addEventListener('click',()=>{
-  lang=lang==='es'?'en':'es';
-  document.documentElement.lang=lang;
-  langBtn.children[0].classList.toggle('on',lang==='es');
-  langBtn.children[1].classList.toggle('on',lang==='en');
-  document.querySelectorAll('[data-es]').forEach(el=>{
-    el.innerHTML=el.getAttribute('data-'+lang);
-  });
-});
 </script>
 </body>
 </html>
