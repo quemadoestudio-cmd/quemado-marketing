@@ -20,9 +20,11 @@
 
 <style>
 :root{
-  --black:#0a0a0b; --panel:#0e0f12; --cream:#f1efe9; --ink:#15140f;
-  --blue:#2f6bf0; --blue-d:#1f4fc4; --muted:#8f8b83; --mutedlt:#6d675e;
-  --line:#242528; --linelt:#d9d4c9;
+  /* Paleta oficial Quemado — Black principal, resto detalles */
+  --black:#050607; --panel:#0c0d14; --cream:#F8FDFF; --ink:#050607;
+  --blue:#122750; --blue-d:#0d1c3a; --muted:#AAAAAA; --mutedlt:#545454;
+  --steel:#545454; --grey:#AAAAAA;
+  --line:#1e2030; --linelt:#d5dbe4;
   --sans:'Helvetica Neue',Arial,sans-serif; --serif:Georgia,'Times New Roman',serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -42,7 +44,8 @@ img{max-width:100%;display:block}
 
 /* tag pill (SELECTED WORK / SERVICES) */
 .tag{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid var(--line);border-radius:40px;font-size:11px;letter-spacing:.14em;color:var(--cream)}
-.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--grey)}
+.tag.dark .dot{background:var(--blue)}
 .tag.dark{border-color:var(--linelt);color:var(--ink)}
 
 /* ===== NAV ===== */
@@ -50,8 +53,8 @@ nav{position:absolute;top:0;left:0;right:0;z-index:50;display:flex;justify-conte
 nav .logo{font-weight:700}
 nav .links{display:flex;gap:32px}
 nav .links a{position:relative;padding-bottom:6px;transition:color .2s}
-nav .links a:hover{color:var(--blue)}
-nav .links a.active::after{content:"";position:absolute;left:50%;bottom:0;width:5px;height:5px;border-radius:50%;background:var(--blue);transform:translateX(-50%)}
+nav .links a:hover{color:var(--grey)}
+nav .links a.active::after{content:"";position:absolute;left:50%;bottom:0;width:5px;height:5px;border-radius:50%;background:var(--grey);transform:translateX(-50%)}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;
@@ -87,7 +90,7 @@ nav .links a.active::after{content:"";position:absolute;left:50%;bottom:0;width:
 .svc-row:hover{border-color:var(--blue)}
 .svc-row .title{font-size:clamp(24px,3.2vw,38px);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
 .svc-row .desc{margin-top:16px;color:var(--muted);font-size:14px;max-width:260px}
-.svc-row .scope{display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.08em;font-weight:600;color:var(--blue)}
+.svc-row .scope{display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.08em;font-weight:600;color:var(--grey)}
 .svc-specs .spec{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
 .svc-specs .spec b{color:var(--cream);font-weight:600}
 .svc-specs .book{margin-top:22px;float:right}
