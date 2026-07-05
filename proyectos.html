@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work — Quemado Estudio | Selected Projects</title>
+<meta name="description" content="Selected work by Quemado Estudio — branding, content systems, web experiences and performance campaigns. Strategy first. Execution always." />
+<link rel="canonical" href="https://www.quemadoestudio.com/proyectos" />
+<meta name="robots" content="index, follow" />
+
+<style>
+:root{
+  --black:#050607; --navy:#122750; --alice:#F8FDFF; --steel:#545454; --grey:#AAAAAA;
+  --sans:'Helvetica Neue',Arial,sans-serif;
+  --mono:'SFMono-Regular',ui-monospace,'Courier New',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--alice);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:center;padding:26px}
+nav .bar{display:flex;align-items:center;gap:60px;background:var(--black);border:1px solid #1e2030;border-radius:8px;padding:14px 26px}
+nav .logo{font-weight:800;font-size:20px;letter-spacing:-.02em}
+nav .links{display:flex;gap:26px;font-size:12px;letter-spacing:.08em;font-family:var(--mono)}
+nav .links a:hover{color:var(--grey)}
+
+/* INTRO */
+.intro{min-height:60vh;display:flex;flex-direction:column;justify-content:center;padding:140px 40px 60px;max-width:1240px;margin:0 auto}
+.intro .k{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--grey);margin-bottom:20px}
+.intro h1{font-size:clamp(40px,8vw,110px);font-weight:800;text-transform:uppercase;line-height:.94;letter-spacing:-.02em}
+
+/* PROJECT PANEL */
+.panel{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center}
+.panel .img{position:absolute;inset:0;background-size:cover;background-position:center;
+  transform:scale(1.12);transition:transform 1.1s ease;will-change:transform}
+.panel.in .img{transform:scale(1)}
+/* placeholders (reemplaza background por url('images/xxx.jpg')) */
+.p1 .img{background:radial-gradient(120% 100% at 50% 20%,#e9e9ec,#c4c4ca 60%,#8f8f97)}
+.p2 .img{background:radial-gradient(120% 100% at 50% 30%,#2a2f40,#0d1020)}
+.p3 .img{background:radial-gradient(120% 100% at 40% 30%,#4a4a4d,#111113)}
+.p4 .img{background:radial-gradient(120% 100% at 60% 25%,#1a2c52,#070a14)}
+.p1 .band .pnum,.p1 .band .ptag,.p1 .band .pcat,.p1 .band .ptitle{color:var(--black)}
+
+/* reveal band */
+.band{position:relative;z-index:2;width:100%;background:rgba(248,253,255,.9);backdrop-filter:blur(6px);
+  padding:44px 6vw;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;
+  clip-path:inset(0 50% 0 50%);transition:clip-path 1s cubic-bezier(.7,0,.2,1) .15s}
+.panel.in .band{clip-path:inset(0 0 0 0)}
+.band .left{display:flex;flex-direction:column;gap:20px}
+.band .pnum{font-family:var(--mono);font-size:15px;color:var(--steel)}
+.band .ptag{font-family:var(--mono);font-size:13px;letter-spacing:.06em;line-height:1.8;color:var(--black);text-transform:uppercase}
+.band .right{text-align:right}
+.band .pcat{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--steel)}
+.band .ptitle{font-size:clamp(36px,5vw,72px);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;color:var(--black);margin-top:12px;line-height:1}
+/* dark panels: band stays light but title dark on light band — keep dark text */
+
+/* OUTRO CTA */
+.outro{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 40px;gap:30px}
+.outro h2{font-size:clamp(38px,7vw,96px);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;line-height:.95}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:var(--alice);padding:14px 14px 14px 30px;border-radius:40px;font-size:13px;letter-spacing:.08em;font-weight:600;transition:.2s;font-family:var(--mono)}
+.cta .arrow{width:30px;height:30px;border-radius:50%;background:var(--alice);color:var(--navy);display:inline-flex;align-items:center;justify-content:center}
+.cta:hover{background:#0d1c3a}
+
+footer{border-top:1px solid #1e2030;padding:24px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.06em;font-family:var(--mono);color:var(--grey)}
+footer a:hover{color:var(--alice)}
+
+@media(max-width:820px){
+  nav .bar{gap:20px;padding:12px 16px}
+  nav .links{gap:14px}
+  .band{grid-template-columns:1fr;gap:18px;padding:30px 24px}
+  .band .right{text-align:left}
+  .panel{height:88vh}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="bar">
+    <a href="index.html" class="logo">Q<sup style="font-size:9px">®</sup></a>
+    <div class="links">
+      <a href="index.html">HOME</a>
+      <a href="proyectos.html">WORK</a>
+      <a href="servicios.html">SERVICES</a>
+      <a href="index.html#contact">CONTACT</a>
+    </div>
+  </div>
+</nav>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="k">[ SELECTED WORK / 2024—2026 ]</div>
+  <h1>Projects<br>built to move.</h1>
+</section>
+
+<!-- PANEL 01 -->
+<section class="panel p1">
+  <div class="img"></div>
+  <div class="band">
+    <div class="left">
+      <span class="pnum">01</span>
+      <p class="ptag">The mark that stays<br>long after the<br>campaign ends</p>
+    </div>
+    <div class="right">
+      <span class="pcat">VISUAL IDENTITY</span>
+      <h2 class="ptitle">Branding</h2>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL 02 -->
+<section class="panel p2">
+  <div class="img"></div>
+  <div class="band">
+    <div class="left">
+      <span class="pnum">02</span>
+      <p class="ptag">Photo and video<br>engineered for<br>attention and reach</p>
+    </div>
+    <div class="right">
+      <span class="pcat">PRODUCTION</span>
+      <h2 class="ptitle">Content</h2>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL 03 -->
+<section class="panel p3">
+  <div class="img"></div>
+  <div class="band">
+    <div class="left">
+      <span class="pnum">03</span>
+      <p class="ptag">Digital experiences<br>that communicate<br>clearly and convert</p>
+    </div>
+    <div class="right">
+      <span class="pcat">WEB / UX-UI</span>
+      <h2 class="ptitle">Experience</h2>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL 04 -->
+<section class="panel p4">
+  <div class="img"></div>
+  <div class="band">
+    <div class="left">
+      <span class="pnum">04</span>
+      <p class="ptag">Systems that turn<br>presence into<br>measurable results</p>
+    </div>
+    <div class="right">
+      <span class="pcat">PERFORMANCE</span>
+      <h2 class="ptitle">Campaign</h2>
+    </div>
+  </div>
+</section>
+
+<!-- OUTRO -->
+<section class="outro">
+  <h2>Let's build<br>something that works.</h2>
+  <a class="cta" href="index.html#contact">START A PROJECT <span class="arrow">→</span></a>
+</section>
+
+<footer>
+  <div>QUEMADO® ESTUDIO — LATAM &amp; US</div>
+  <div style="display:flex;gap:24px">
+    <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener">TIKTOK</a>
+    <a href="https://threads.net" target="_blank" rel="noopener">THREADS</a>
+  </div>
+</footer>
+
+<script>
+// Reveal cada panel al entrar en viewport
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) e.target.classList.add('in');
+}),{threshold:.35});
+document.querySelectorAll('.panel').forEach(p=>io.observe(p));
+
+// Parallax sutil de la imagen dentro de cada panel
+let ticking=false;
+function parallax(){
+  document.querySelectorAll('.panel').forEach(p=>{
+    const r=p.getBoundingClientRect();
+    if(r.bottom<0||r.top>innerHeight) return;
+    const img=p.querySelector('.img');
+    const off=(r.top/innerHeight)*-30;
+    img.style.transform=`scale(${p.classList.contains('in')?1:1.12}) translateY(${off}px)`;
+  });
+  ticking=false;
+}
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(parallax);ticking=true;}});
+</script>
+</body>
+</html>
