@@ -1,0 +1,290 @@
+<!-- QUEMADO HOME - pegar en bloque HTML personalizado -->
+<style>
+:root{
+  /* Paleta oficial Quemado — Black principal, resto detalles */
+  --black:#050607; --panel:#0c0d14; --cream:#F8FDFF; --ink:#050607;
+  --blue:#122750; --blue-d:#0d1c3a; --muted:#AAAAAA; --mutedlt:#545454;
+  --steel:#545454; --grey:#AAAAAA;
+  --line:#1e2030; --linelt:#d5dbe4;
+  --sans:'Helvetica Neue',Arial,sans-serif; --serif:Georgia,'Times New Roman',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--cream);font-family:var(--sans);line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+img{max-width:100%;display:block}
+
+/* arrow-circle helper */
+.arrow{width:30px;height:30px;border-radius:50%;background:var(--cream);color:var(--black);display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.pill{display:inline-flex;align-items:center;gap:12px;padding:8px 8px 8px 22px;border:1px solid rgba(241,239,233,.35);border-radius:40px;font-size:13px;letter-spacing:.07em;font-weight:600;transition:.2s}
+.pill:hover{border-color:var(--cream)}
+.pill.blue{background:var(--blue);border-color:var(--blue)}
+.pill.blue .arrow{background:#fff}
+.pill.blue:hover{background:var(--blue-d);border-color:var(--blue-d)}
+
+/* tag pill (SELECTED WORK / SERVICES) */
+.tag{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid var(--line);border-radius:40px;font-size:11px;letter-spacing:.14em;color:var(--cream)}
+.tag .dot{width:7px;height:7px;border-radius:50%;background:var(--grey)}
+.tag.dark .dot{background:var(--blue)}
+.tag.dark{border-color:var(--linelt);color:var(--ink)}
+
+/* ===== NAV ===== */
+nav{position:absolute;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;font-size:13px;letter-spacing:.06em}
+nav .logo{font-weight:700}
+nav .links{display:flex;gap:32px}
+nav .links a{position:relative;padding-bottom:6px;transition:color .2s}
+nav .links a:hover{color:var(--grey)}
+nav .links a.active::after{content:"";position:absolute;left:50%;bottom:0;width:5px;height:5px;border-radius:50%;background:var(--grey);transform:translateX(-50%)}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;overflow:hidden;background:#050607;display:flex}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8;z-index:0}
+.hero-tint{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,6,7,.25) 0%,rgba(5,6,7,.05) 40%,rgba(5,6,7,.55) 100%);pointer-events:none}
+/* ruido animado sobre todo el hero */
+.noise{position:absolute;inset:-150%;z-index:2;pointer-events:none;opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain .5s steps(3) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-6%,4%)}50%{transform:translate(3%,-5%)}75%{transform:translate(-4%,-3%)}100%{transform:translate(5%,5%)}}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:1240px;margin:0 auto;padding:0 40px;min-height:100vh}
+/* título centrado vertical */
+.hero-main{position:absolute;top:50%;left:40px;transform:translateY(-50%)}
+.hero h1{font-size:clamp(44px,9.5vw,132px);font-weight:800;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;color:var(--alice);max-width:12ch}
+/* descriptor arriba-derecha */
+.hero-desc{position:absolute;top:38%;right:40px;max-width:230px;font-size:16px;line-height:1.45;color:#dbe1ec}
+/* tarjeta abajo-izquierda */
+.hero-card{position:absolute;left:40px;bottom:52px;display:flex;gap:14px;align-items:stretch}
+.hero-card img{width:96px;height:96px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.hero-card .cbox{background:var(--alice);color:var(--ink);border-radius:10px;padding:16px 22px;display:flex;flex-direction:column;justify-content:center;gap:12px;min-width:180px}
+.hero-card .cbox p{font-size:16px;line-height:1.3}
+.hero-card .sv{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--alice);padding:8px 16px;border-radius:22px;font-size:12px;letter-spacing:.05em;transition:.2s}
+.hero-card .sv:hover{background:var(--blue)}
+
+/* ===== SELECTED WORK ===== */
+.work{background:var(--cream);color:var(--ink);padding:80px 0 90px}
+.work h2{font-size:clamp(30px,5vw,58px);font-weight:800;text-transform:uppercase;letter-spacing:-.02em;margin:22px 0 50px}
+.cascade{position:relative;display:flex;flex-direction:column;align-items:stretch}
+.proj{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.28);min-height:230px;display:flex;align-items:flex-start;border:4px solid var(--cream)}
+.proj:not(:first-child){margin-top:-70px}
+.proj:nth-child(1){width:66%;margin-left:auto;background:linear-gradient(135deg,#7ea6d8,#3f5f86)}
+.proj:nth-child(2){width:76%;background:linear-gradient(135deg,#8f8a80,#4a463f)}
+.proj:nth-child(3){width:86%;margin-left:auto;background:linear-gradient(135deg,#3a3a3c,#141416)}
+.proj:nth-child(4){width:96%;background:linear-gradient(135deg,#2a2622,#0c0b0a)}
+.proj .lbl{margin:20px;padding:9px 18px;font-size:14px;font-weight:700;letter-spacing:.02em;color:#fff;background:rgba(15,25,50,.72);border-radius:6px;backdrop-filter:blur(4px)}
+.proj:nth-child(-n+2) .lbl{background:var(--blue-d)}
+
+/* ===== SERVICES ===== */
+.services{padding:100px 0 110px}
+.eyebrowrow{margin-bottom:22px}
+.sec-h{font-size:clamp(32px,5.2vw,62px);font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:-.02em;margin:22px 0 50px}
+.svc-row{border:1px solid var(--line);border-radius:8px;padding:34px 38px;margin-bottom:18px;
+  display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;transition:border-color .25s;background:var(--panel)}
+.svc-row:hover{border-color:var(--blue)}
+.svc-row .title{font-size:clamp(24px,3.2vw,38px);font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.svc-row .desc{margin-top:16px;color:var(--muted);font-size:14px;max-width:260px}
+.svc-row .scope{display:inline-block;margin-top:20px;font-size:12px;letter-spacing:.08em;font-weight:600;color:var(--grey)}
+.svc-specs .spec{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px}
+.svc-specs .spec b{color:var(--cream);font-weight:600}
+.svc-specs .book{margin-top:22px;float:right}
+
+/* ===== CREAM BLOCK ===== */
+.cream{background:var(--cream);color:var(--ink)}
+.cream-top{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--linelt)}
+.cream-top>div{padding:64px 40px}
+.cream-top>div:first-child{border-right:1px solid var(--linelt)}
+.build{font-size:clamp(30px,4.6vw,54px);line-height:1.02;letter-spacing:-.01em}
+.build i{font-family:var(--serif);font-style:italic;font-weight:400;font-size:.75em}
+.build b{font-weight:800;text-transform:uppercase;display:block}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.4vw,38px);line-height:1.26;display:flex;align-items:center;height:100%}
+.cream-bot{display:grid;grid-template-columns:1fr 1fr}
+.cream-bot>div{padding:44px 40px}
+.cream-bot>div:first-child{border-right:1px solid var(--linelt)}
+.about-txt{font-size:19px;line-height:1.4;max-width:330px}
+.book-card{display:flex;gap:20px;align-items:center}
+.avatar{width:74px;height:74px;border-radius:50%;flex-shrink:0;background:radial-gradient(circle at 40% 35%,#6a655c,#26231f);box-shadow:inset -5px -5px 16px rgba(0,0,0,.4)}
+.book-card h3{font-size:18px;font-weight:800;text-transform:uppercase;line-height:1.05}
+.book-card p{font-size:13px;color:var(--mutedlt);margin:7px 0 14px;max-width:230px}
+.talk{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--cream);padding:7px 7px 7px 20px;border-radius:40px;font-size:12px;letter-spacing:.08em;transition:.2s}
+.talk .arrow{background:var(--cream);color:var(--ink)}
+.talk:hover{background:var(--blue)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--cream);color:var(--ink);border-top:1px solid var(--linelt);padding:24px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.06em}
+footer .fl{display:flex;gap:28px}
+footer a:hover{color:var(--blue)}
+
+.wa{position:fixed;bottom:22px;right:22px;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.4);transition:.2s}
+.wa:hover{transform:scale(1.08)}.wa svg{width:29px;height:29px;fill:#fff}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+  .wrap,nav,.cream-top>div,.cream-bot>div,footer,.work,.services{padding-left:20px;padding-right:20px}
+  nav .links{gap:15px;font-size:11px}
+  /* HERO responsive: todo se apila en orden */
+  .hero-inner{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 20px 40px}
+  .hero-main{position:static;transform:none;left:auto;top:auto}
+  .hero h1{font-size:clamp(40px,13vw,72px);max-width:100%}
+  .hero-desc{position:static;right:auto;top:auto;max-width:100%;margin-top:22px}
+  .hero-card{position:static;left:auto;bottom:auto;margin-top:30px}
+  .hero-card .cbox{min-width:0}
+  .svc-row,.cream-top,.cream-bot{grid-template-columns:1fr;gap:22px}
+  .cream-top>div:first-child,.cream-bot>div:first-child{border-right:none;border-bottom:1px solid var(--linelt)}
+  .svc-specs .book{float:none;display:inline-flex;margin-top:18px}
+  .proj{width:100%!important;margin-left:0!important;min-height:170px}
+  .proj:not(:first-child){margin-top:14px}
+}
+</style>
+
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="logo">QUEMADO<sup style="font-size:8px">®</sup> ESTUDIO</div>
+  <div class="links">
+    <a href="proyectos.html">WORK</a>
+    <a href="servicios.html" class="active">SERVICES</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline
+    src="https://quemadoestudio.com/wp-content/uploads/2026/07/Diseno-sin-titulo-1.mp4"></video>
+  <div class="hero-tint"></div>
+  <div class="noise"></div>
+  <div class="hero-inner">
+    <div class="hero-main">
+      <h1>Agencia de<br>marketing<br>digital</h1>
+    </div>
+    <p class="hero-desc">Agencia creativa liderada por estrategia, operando entre Perú y EE. UU.</p>
+    <div class="hero-card">
+      <img src="https://quemadoestudio.com/wp-content/uploads/2026/07/1.jpg" alt="Equipo de Quemado Estudio" />
+      <div class="cbox">
+        <p>Creamos <b>marcas</b><br>que <b>avanzan.</b></p>
+        <a class="sv" href="servicios.html">servicios <span>▶</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== SELECTED WORK ===== -->
+<section class="work" id="work">
+  <div class="wrap">
+    <span class="tag dark reveal"><span class="dot"></span>SELECTED WORK</span>
+    <h2 class="reveal">Projects built to move.</h2>
+    <div class="cascade">
+      <div class="proj reveal"><span class="lbl">MODA EAGLE.</span></div>
+      <div class="proj reveal"><span class="lbl">AROMAS DE LUJO.</span></div>
+      <div class="proj reveal"><span class="lbl">CONTENT SYSTEM.</span></div>
+      <div class="proj reveal"><span class="lbl">PERFORMANCE CAMPAIGN.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services">
+  <div class="wrap">
+    <div class="eyebrowrow reveal"><span class="tag"><span class="dot"></span>SERVICES</span></div>
+    <h2 class="sec-h reveal">We don't post.<br>We engineer.</h2>
+
+    <!-- 1 -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Content<br>Production</div>
+        <p class="desc">Premium production built for platforms, campaigns and conversion.</p>
+        <span class="scope">CUSTOM SCOPE</span>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Scope</span><b>Photo + Video</b></div>
+          <div class="spec"><span>Output</span><b>Campaign + Social</b></div>
+          <div class="spec"><span>Delivery</span><b>Ready to Publish</b></div>
+        </div>
+        <a class="pill book" href="#contact">BOOK A CALL <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- 2 (featured blue) -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Brand &amp;<br>Identity</div>
+        <p class="desc">Clear positioning and visual systems designed to stay consistent.</p>
+        <span class="scope">CUSTOM SCOPE</span>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Focus</span><b>Positioning</b></div>
+          <div class="spec"><span>System</span><b>Visual + Verbal</b></div>
+          <div class="spec"><span>Delivery</span><b>Brand Toolkit</b></div>
+        </div>
+        <a class="pill blue book" href="#contact">BOOK A CALL <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="svc-row reveal">
+      <div>
+        <div class="title">Web Design &amp;<br>Experience</div>
+        <p class="desc">Digital experiences that communicate clearly and convert.</p>
+        <span class="scope">CUSTOM SCOPE</span>
+      </div>
+      <div>
+        <div class="svc-specs">
+          <div class="spec"><span>Focus</span><b>UX / UI</b></div>
+          <div class="spec"><span>Build</span><b>Responsive</b></div>
+          <div class="spec"><span>Goal</span><b>Performance</b></div>
+        </div>
+        <a class="pill book" href="#contact">BOOK A CALL <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREAM BLOCK ===== -->
+<section class="cream" id="about">
+  <div class="cream-top">
+    <div class="reveal">
+      <div class="build"><i>let's</i><b>Build</b><b>Something</b><b>That works.</b></div>
+    </div>
+    <div class="reveal">
+      <div class="quote">"Strategy gives direction. Execution builds presence."</div>
+    </div>
+  </div>
+  <div class="cream-bot" id="contact">
+    <div class="reveal">
+      <div style="margin-bottom:20px"><span class="tag dark"><span class="dot"></span>ABOUT QUEMADO</span></div>
+      <p class="about-txt">We design digital systems where strategy, content and performance move as one.</p>
+    </div>
+    <div class="reveal">
+      <div class="book-card">
+        <div class="avatar"></div>
+        <div>
+          <h3>Book a call<br>with Quemado</h3>
+          <p>Tell us where your brand is going. We'll map the clearest way forward.</p>
+          <a class="talk" href="https://wa.me/51999999999" target="_blank" rel="noopener">LET'S TALK <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>QUEMADO® ESTUDIO — LATAM &amp; US</div>
+  <div class="fl">
+    <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener">TIKTOK</a>
+    <a href="https://threads.net" target="_blank" rel="noopener">THREADS</a>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/51999999999" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.115zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+</a>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
