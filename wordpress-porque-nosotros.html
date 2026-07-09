@@ -4,20 +4,16 @@
 #pq-stage{position:relative;width:100%;height:78vh;min-height:520px;overflow:hidden;
   background:#050607;font-family:'Montserrat',Arial,sans-serif;touch-action:none;user-select:none}
 #pq-title{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;
-  color:#F8FDFF;font-weight:700;font-size:clamp(40px,7.5vw,118px);line-height:.92;letter-spacing:-.03em;
+  color:#F8FDFF;font-weight:700;font-size:clamp(38px,7.5vw,118px);line-height:.92;letter-spacing:-.03em;
   pointer-events:none;text-align:center;margin:0}
 .pq-box{position:absolute;top:0;left:0;z-index:2;will-change:transform;cursor:grab;
   background:#050607;border:1px solid rgba(248,253,255,.55);border-radius:10px;
   color:#F8FDFF;font-size:15px;font-weight:600;line-height:1.25;padding:14px 20px;max-width:230px}
 .pq-box:active{cursor:grabbing}
-
-/* ===== MÓVIL: sin física, lista simple (todas visibles) ===== */
 @media(max-width:820px){
-  #pq-stage{height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;
-    align-items:center;padding:56px 20px 60px}
-  #pq-title{position:static;transform:none;font-size:clamp(38px,12vw,64px);margin:0 0 34px}
-  .pq-box{position:static!important;transform:none!important;max-width:100%;width:100%;
-    cursor:default;text-align:center;margin:8px 0;font-size:14px;padding:15px 18px}
+  #pq-stage{height:100vh;min-height:560px}
+  .pq-box{font-size:12px;padding:9px 12px;max-width:135px}
+  #pq-title{font-size:clamp(36px,11vw,64px)}
 }
 </style>
 
@@ -40,7 +36,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script>
 (function(){
-  if(window.matchMedia('(max-width:820px)').matches) return; // móvil: lista simple, sin física
   function start(){
     var M=window.Matter;
     if(!M){setTimeout(start,120);return;}
@@ -49,21 +44,24 @@
     var stage=document.getElementById('pq-stage');
     var title=document.getElementById('pq-title');
     var W=stage.clientWidth, H=stage.clientHeight;
+    var mobile=W<820;
     var tr=title.getBoundingClientRect();
-    var zw=tr.width+80, zh=tr.height+60, cx=W/2, cy=H/2;
+    var zw=tr.width+60, zh=tr.height+40, cx=W/2, cy=H/2;
     function inZone(x,y,w,h){return Math.abs(x-cx)<(zw+w)/2 && Math.abs(y-cy)<(zh+h)/2;}
     var engine=Engine.create(); engine.world.gravity.y=0; engine.world.gravity.x=0;
     var boxes=[].slice.call(stage.querySelectorAll('.pq-box'));
+    var iv=mobile?2:4;
     var bodies=boxes.map(function(el){
       var w=el.offsetWidth, h=el.offsetHeight, x,y,tries=0;
-      do{x=Math.random()*(W-w-40)+w/2+20; y=Math.random()*(H-h-40)+h/2+20; tries++;}
-      while(inZone(x,y,w,h) && tries<60);
-      var b=Bodies.rectangle(x,y,w,h,{restitution:.75,frictionAir:.018,chamfer:{radius:8}});
-      Body.setVelocity(b,{x:(Math.random()-.5)*4,y:(Math.random()-.5)*4});
-      Body.setAngularVelocity(b,(Math.random()-.5)*.05);
+      do{x=Math.random()*(W-w-30)+w/2+15; y=Math.random()*(H-h-30)+h/2+15; tries++;}
+      while(inZone(x,y,w,h) && tries<80);
+      var b=Bodies.rectangle(x,y,w,h,{restitution:.55,frictionAir:.02,chamfer:{radius:8}});
+      b._hw=w/2; b._hh=h/2;
+      Body.setVelocity(b,{x:(Math.random()-.5)*iv,y:(Math.random()-.5)*iv});
+      Body.setAngularVelocity(b,(Math.random()-.5)*.04);
       el._b=b; return b;
     });
-    var t=60;
+    var t=200; // paredes gruesas para que nada escape
     World.add(engine.world,[
       Bodies.rectangle(W/2,-t/2,W+2*t,t,{isStatic:true}),
       Bodies.rectangle(W/2,H+t/2,W+2*t,t,{isStatic:true}),
@@ -71,23 +69,36 @@
       Bodies.rectangle(W+t/2,H/2,t,H+2*t,{isStatic:true})
     ].concat(bodies));
     var mouse=Mouse.create(stage);
-    var mc=MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.25,render:{visible:false}}});
+    var mc=MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.22,render:{visible:false}}});
     World.add(engine.world,mc);
     Runner.run(Runner.create(),engine);
+
     var mx=-999,my=-999;
-    stage.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top;});
+    function setM(x,y){var r=stage.getBoundingClientRect(); mx=x-r.left; my=y-r.top;}
+    stage.addEventListener('mousemove',function(e){setM(e.clientX,e.clientY);});
     stage.addEventListener('mouseleave',function(){mx=-999;my=-999;});
+
     Events.on(engine,'beforeUpdate',function(){
       bodies.forEach(function(b){
         if(mc.body===b) return;
         var dx=b.position.x-mx, dy=b.position.y-my, d2=dx*dx+dy*dy;
-        if(d2<180*180 && d2>1){var d=Math.sqrt(d2), f=(1-d/180)*0.9/d; Body.applyForce(b,b.position,{x:dx*f*0.02,y:dy*f*0.02});}
+        if(d2<170*170 && d2>1){var d=Math.sqrt(d2), f=(1-d/170)*0.9/d; Body.applyForce(b,b.position,{x:dx*f*0.02,y:dy*f*0.02});}
         var v=b.velocity, sp=Math.sqrt(v.x*v.x+v.y*v.y);
-        if(sp<0.6){Body.applyForce(b,b.position,{x:(Math.random()-.5)*0.006,y:(Math.random()-.5)*0.006});}
+        if(sp<0.5){Body.applyForce(b,b.position,{x:(Math.random()-.5)*0.005,y:(Math.random()-.5)*0.005});}
+        if(sp>7){Body.setVelocity(b,{x:v.x*.6,y:v.y*.6});} // freno anti-escape
       });
     });
+
     Events.on(engine,'afterUpdate',function(){
-      boxes.forEach(function(el){var b=el._b; el.style.transform='translate('+(b.position.x-el.offsetWidth/2)+'px,'+(b.position.y-el.offsetHeight/2)+'px) rotate('+b.angle+'rad)';});
+      boxes.forEach(function(el){
+        var b=el._b;
+        // candado: si se sale, lo regreso dentro
+        var minx=b._hw, maxx=W-b._hw, miny=b._hh, maxy=H-b._hh, p=b.position, moved=false, nx=p.x, ny=p.y;
+        if(p.x<minx){nx=minx;moved=true;} else if(p.x>maxx){nx=maxx;moved=true;}
+        if(p.y<miny){ny=miny;moved=true;} else if(p.y>maxy){ny=maxy;moved=true;}
+        if(moved){Body.setPosition(b,{x:nx,y:ny}); Body.setVelocity(b,{x:b.velocity.x*-.4,y:b.velocity.y*-.4});}
+        el.style.transform='translate('+(b.position.x-el.offsetWidth/2)+'px,'+(b.position.y-el.offsetHeight/2)+'px) rotate('+b.angle+'rad)';
+      });
     });
   }
   if(document.readyState!=='loading') start(); else document.addEventListener('DOMContentLoaded',start);
