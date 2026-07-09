@@ -1,17 +1,17 @@
 <!-- QUEMADO · Acordeón de Servicios · pegar en bloque HTML personalizado -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-.qacc{--ink:#050607;--blue:#122750;--line:#dcdcdc;--sans:'Montserrat',Arial,sans-serif;
-  background:#fff;color:var(--ink);font-family:var(--sans);max-width:100%;margin:0;padding:40px 6vw}
+.qacc{--fg:#F8FDFF;--acc:#2f6bf0;--line:rgba(248,253,255,.18);--sans:'Montserrat',Arial,sans-serif;
+  background:transparent;color:var(--fg);font-family:var(--sans);max-width:100%;margin:0;padding:40px 6vw}
 .qacc *{box-sizing:border-box}
 .qacc-item{border-top:1px solid var(--line)}
 .qacc-item:last-child{border-bottom:1px solid var(--line)}
 .qacc-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;
   padding:34px 0;cursor:pointer}
-.qacc-num{font-size:20px;font-weight:700;color:var(--ink);align-self:start;padding-top:14px}
-.qacc-title{font-size:clamp(30px,4.4vw,52px);font-weight:700;letter-spacing:-.02em;transition:color .2s}
-.qacc-item:hover .qacc-title{color:#555}
-.qacc-btn{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;
+.qacc-num{font-size:20px;font-weight:700;color:var(--fg);align-self:start;padding-top:14px}
+.qacc-title{font-size:clamp(30px,4.4vw,52px);font-weight:700;letter-spacing:-.02em;color:var(--fg);transition:color .2s}
+.qacc-item:hover .qacc-title{color:#b9c2d6}
+.qacc-btn{width:52px;height:52px;border-radius:50%;background:var(--fg);color:#050607;
   display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:400;flex-shrink:0;transition:transform .3s}
 .qacc-item.open .qacc-btn{transform:rotate(45deg)}
 .qacc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
@@ -19,12 +19,12 @@
 .qacc-inner{overflow:hidden}
 .qacc-grid{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:36px;padding:6px 0 46px}
 .qacc-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
-.qacc-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px;font-weight:400;line-height:1.3}
-.qacc-list li::before{content:"✳";color:var(--blue);font-size:13px;line-height:1.5}
-.qacc-desc{font-size:16px;font-weight:400;line-height:1.6;color:#050607}
-.qacc-details{display:inline-block;margin-top:22px;background:var(--ink);color:#fff;font-weight:400;
+.qacc-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px;font-weight:400;line-height:1.3;color:var(--fg)}
+.qacc-list li::before{content:"✳";color:var(--acc);font-size:13px;line-height:1.5}
+.qacc-desc{font-size:16px;font-weight:400;line-height:1.6;color:#d7dbe4}
+.qacc-details{display:inline-block;margin-top:22px;background:var(--fg);color:#050607;font-weight:600;
   padding:12px 26px;border-radius:30px;font-size:14px;text-decoration:none;transition:.2s}
-.qacc-details:hover{background:var(--blue)}
+.qacc-details:hover{background:var(--acc);color:#fff}
 @media(max-width:820px){
   .qacc{padding:24px 18px}
   .qacc-head{gap:14px;padding:24px 0}
