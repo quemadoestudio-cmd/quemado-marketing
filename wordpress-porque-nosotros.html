@@ -10,9 +10,14 @@
   background:#050607;border:1px solid rgba(248,253,255,.55);border-radius:10px;
   color:#F8FDFF;font-size:15px;font-weight:600;line-height:1.25;padding:14px 20px;max-width:230px}
 .pq-box:active{cursor:grabbing}
+
+/* ===== MÓVIL: sin física, lista simple (todas visibles) ===== */
 @media(max-width:820px){
-  #pq-stage{height:90vh;min-height:600px}
-  .pq-box{font-size:12.5px;padding:10px 14px;max-width:160px}
+  #pq-stage{height:auto;min-height:0;overflow:visible;display:flex;flex-direction:column;
+    align-items:center;padding:56px 20px 60px}
+  #pq-title{position:static;transform:none;font-size:clamp(38px,12vw,64px);margin:0 0 34px}
+  .pq-box{position:static!important;transform:none!important;max-width:100%;width:100%;
+    cursor:default;text-align:center;margin:8px 0;font-size:14px;padding:15px 18px}
 }
 </style>
 
@@ -35,10 +40,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script>
 (function(){
+  if(window.matchMedia('(max-width:820px)').matches) return; // móvil: lista simple, sin física
   function start(){
     var M=window.Matter;
     if(!M){setTimeout(start,120);return;}
-    var Engine=M.Engine,World=M.World,Bodies=M.Bodies,Body=M.Body,Vector=M.Vector,
+    var Engine=M.Engine,World=M.World,Bodies=M.Bodies,Body=M.Body,
         Mouse=M.Mouse,MouseConstraint=M.MouseConstraint,Runner=M.Runner,Events=M.Events;
     var stage=document.getElementById('pq-stage');
     var title=document.getElementById('pq-title');
@@ -68,36 +74,20 @@
     var mc=MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.25,render:{visible:false}}});
     World.add(engine.world,mc);
     Runner.run(Runner.create(),engine);
-
-    // El cursor empuja las cajas cercanas
     var mx=-999,my=-999;
-    stage.addEventListener('mousemove',function(e){
-      var r=stage.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top;
-    });
+    stage.addEventListener('mousemove',function(e){var r=stage.getBoundingClientRect(); mx=e.clientX-r.left; my=e.clientY-r.top;});
     stage.addEventListener('mouseleave',function(){mx=-999;my=-999;});
-
     Events.on(engine,'beforeUpdate',function(){
       bodies.forEach(function(b){
-        if(mc.body===b) return; // no empujar la que arrastro
-        // repulsión del cursor
+        if(mc.body===b) return;
         var dx=b.position.x-mx, dy=b.position.y-my, d2=dx*dx+dy*dy;
-        if(d2<180*180 && d2>1){
-          var d=Math.sqrt(d2), f=(1-d/180)*0.9/d;
-          Body.applyForce(b,b.position,{x:dx*f*0.02,y:dy*f*0.02});
-        }
-        // movimiento perpetuo: mantener una velocidad mínima
+        if(d2<180*180 && d2>1){var d=Math.sqrt(d2), f=(1-d/180)*0.9/d; Body.applyForce(b,b.position,{x:dx*f*0.02,y:dy*f*0.02});}
         var v=b.velocity, sp=Math.sqrt(v.x*v.x+v.y*v.y);
-        if(sp<0.6){
-          Body.applyForce(b,b.position,{x:(Math.random()-.5)*0.006,y:(Math.random()-.5)*0.006});
-        }
+        if(sp<0.6){Body.applyForce(b,b.position,{x:(Math.random()-.5)*0.006,y:(Math.random()-.5)*0.006});}
       });
     });
-
     Events.on(engine,'afterUpdate',function(){
-      boxes.forEach(function(el){
-        var b=el._b;
-        el.style.transform='translate('+(b.position.x-el.offsetWidth/2)+'px,'+(b.position.y-el.offsetHeight/2)+'px) rotate('+b.angle+'rad)';
-      });
+      boxes.forEach(function(el){var b=el._b; el.style.transform='translate('+(b.position.x-el.offsetWidth/2)+'px,'+(b.position.y-el.offsetHeight/2)+'px) rotate('+b.angle+'rad)';});
     });
   }
   if(document.readyState!=='loading') start(); else document.addEventListener('DOMContentLoaded',start);
