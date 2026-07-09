@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 #qab{position:relative;overflow:hidden;background:#F8FDFF;color:#050607;
   font-family:'Montserrat',Arial,sans-serif;padding:70px 6vw 0}
-#qab .top{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;
+#qab .top{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;
   position:relative;z-index:2}
-#qab .photo{width:100%;border-radius:14px;object-fit:cover;aspect-ratio:4/5}
+#qab .photo{width:100%;max-width:320px;height:auto;display:block;margin:0 auto;border-radius:14px;justify-self:center}
 #qab .lead{font-size:clamp(20px,2.4vw,32px);font-weight:700;line-height:1.25;letter-spacing:-.01em}
 #qab .tag{font-size:12px;letter-spacing:.14em;color:#545454;margin-bottom:18px}
 #qab .desc{font-size:16px;font-weight:400;line-height:1.6;color:#333;margin-top:20px;text-align:justify}
@@ -25,7 +25,7 @@
 @media(max-width:820px){
   #qab{padding:50px 22px 0}
   #qab .top{grid-template-columns:1fr;gap:26px}
-  #qab .photo{aspect-ratio:16/10}
+  #qab .photo{max-width:240px}
   #qab .blurmark{font-size:22vw;filter:blur(9px);margin:28px -22px 0}
 }
 </style>
