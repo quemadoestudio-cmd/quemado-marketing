@@ -1,0 +1,77 @@
+<!-- QUEMADO · ¿Por qué nosotros? · cajas flotantes con física · pegar en bloque HTML -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+#pq-stage{position:relative;width:100%;height:78vh;min-height:520px;overflow:hidden;
+  background:#050607;font-family:'Montserrat',Arial,sans-serif;touch-action:none;user-select:none}
+#pq-title{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;
+  color:#F8FDFF;font-weight:700;font-size:clamp(48px,9vw,140px);letter-spacing:-.03em;
+  pointer-events:none;white-space:nowrap;text-align:center}
+.pq-box{position:absolute;top:0;left:0;z-index:2;will-change:transform;cursor:grab;
+  background:#050607;border:1px solid rgba(248,253,255,.55);border-radius:10px;
+  color:#F8FDFF;font-size:15px;font-weight:600;line-height:1.25;padding:14px 20px;
+  max-width:230px}
+.pq-box:active{cursor:grabbing}
+@media(max-width:820px){
+  #pq-stage{height:88vh;min-height:600px}
+  .pq-box{font-size:13px;padding:11px 15px;max-width:180px}
+}
+</style>
+
+<div id="pq-stage">
+  <div id="pq-title">¿Por qué<br>nosotros?</div>
+  <div class="pq-box">Un solo sistema: estrategia, diseño y producción</div>
+  <div class="pq-box">Operando entre Perú y LATAM</div>
+  <div class="pq-box">Construimos sistemas, no piezas sueltas</div>
+  <div class="pq-box">Producción propia, sin tercerizar</div>
+  <div class="pq-box">Brandbook completo y editable</div>
+  <div class="pq-box">Contenido con dirección, no relleno</div>
+  <div class="pq-box">Entregables en 4K</div>
+  <div class="pq-box">Sistema visual adaptable a todo formato</div>
+  <div class="pq-box">Cada decisión responde a un objetivo</div>
+  <div class="pq-box">Del brief al brandbook, un mismo criterio</div>
+  <div class="pq-box">Soporte en cada etapa del proyecto</div>
+  <div class="pq-box">Diseño que se sostiene en el tiempo</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script>
+(function(){
+  function start(){
+    var M=window.Matter;
+    if(!M){setTimeout(start,120);return;}
+    var Engine=M.Engine,World=M.World,Bodies=M.Bodies,Body=M.Body,
+        Mouse=M.Mouse,MouseConstraint=M.MouseConstraint,Runner=M.Runner,Events=M.Events;
+    var stage=document.getElementById('pq-stage');
+    var W=stage.clientWidth, H=stage.clientHeight;
+    var engine=Engine.create(); engine.world.gravity.y=0; engine.world.gravity.x=0;
+    var boxes=[].slice.call(stage.querySelectorAll('.pq-box'));
+    var bodies=boxes.map(function(el){
+      var w=el.offsetWidth, h=el.offsetHeight;
+      var x=Math.random()*(W-w-40)+w/2+20;
+      var y=Math.random()*(H-h-40)+h/2+20;
+      var b=Bodies.rectangle(x,y,w,h,{restitution:.7,frictionAir:.03,chamfer:{radius:8}});
+      Body.setVelocity(b,{x:(Math.random()-.5)*5,y:(Math.random()-.5)*5});
+      Body.setAngularVelocity(b,(Math.random()-.5)*.06);
+      el._b=b; return b;
+    });
+    var t=60;
+    World.add(engine.world,[
+      Bodies.rectangle(W/2,-t/2,W+2*t,t,{isStatic:true}),
+      Bodies.rectangle(W/2,H+t/2,W+2*t,t,{isStatic:true}),
+      Bodies.rectangle(-t/2,H/2,t,H+2*t,{isStatic:true}),
+      Bodies.rectangle(W+t/2,H/2,t,H+2*t,{isStatic:true})
+    ].concat(bodies));
+    var mouse=Mouse.create(stage);
+    var mc=MouseConstraint.create(engine,{mouse:mouse,constraint:{stiffness:.25,render:{visible:false}}});
+    World.add(engine.world,mc);
+    Runner.run(Runner.create(),engine);
+    Events.on(engine,'afterUpdate',function(){
+      boxes.forEach(function(el){
+        var b=el._b;
+        el.style.transform='translate('+(b.position.x-el.offsetWidth/2)+'px,'+(b.position.y-el.offsetHeight/2)+'px) rotate('+b.angle+'rad)';
+      });
+    });
+  }
+  if(document.readyState!=='loading') start(); else document.addEventListener('DOMContentLoaded',start);
+})();
+</script>
